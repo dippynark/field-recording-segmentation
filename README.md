@@ -31,4 +31,5 @@ The model can be used in code as:
 
 ```sh
 python generate_features.py
+python train_and_test.py
 ```
