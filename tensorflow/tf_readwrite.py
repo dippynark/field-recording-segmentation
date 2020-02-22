@@ -1,7 +1,7 @@
 import csv
 import numpy as np
 from sklearn.model_selection import train_test_split
-from tensorflow.contrib.signal.python.ops import shape_ops
+from tensorflow.python.ops.signal import shape_ops
 import tensorflow as tf
 
 
@@ -10,7 +10,7 @@ def dataset_files_labels(folders, db_root):
     fl = []
     for f in folders:
 
-        fo = open(db_root + '/sample labels ' + f + '.txt', 'r')
+        fo = open(db_root + '/' + f + '/sample labels.txt', 'r')
         dialect = csv.Sniffer().sniff(fo.read(1024), delimiters="\t ")
         fo.seek(0)
         for x in csv.reader(fo, dialect):
@@ -169,7 +169,7 @@ def write_features(D, label, file_name):
     '''
 
     print('Writing', file_name)
-    writer = tf.python_io.TFRecordWriter(file_name)
+    writer = tf.compat.v1.python_io.TFRecordWriter(file_name)
 
     if D.ndim==2:
         example = tf.train.SequenceExample(

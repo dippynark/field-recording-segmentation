@@ -25,8 +25,8 @@ def calc_features(fileName, duration=None):
 
 def generate_features():
 
-    folders = ['LIST_OF_FOLDERS_TO_PROCESS']
-    fl = dataset_files_labels(folders)
+    folders = ['samples']
+    fl = dataset_files_labels(folders,db_root='../../field-recording-db')
 
     for (fileName, label) in fl:
         features,freqs,sr=calc_features(fileName)
@@ -52,4 +52,7 @@ def main(_):
 
 
 if __name__ == '__main__':
-    tf.app.run()
+    tf.compat.v1.app.run(
+        main=None,
+        argv=None
+    )
