@@ -26,3 +26,10 @@ The model can be used in code as:
     predictions = tf.get_default_graph().get_tensor_by_name("predictions:0")
     probabilities = sess.run([predictions], feed_dict={'xinput:0': Df})
 ```
+
+## Quickstart
+
+```sh
+python generate_features.py
+python train_and_test.py
+```

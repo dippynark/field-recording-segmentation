@@ -27,7 +27,7 @@ def main(_):
         write_dir=tmpdirname
 
     # get a list of files
-    dataset, x, all_labels, num_freqs, block_len = train_test_set(['1', '2', 'i', 's'], 0, config['Folders']['db_root'], config.getfloat('Network','block_length_sec'), ['effects', 'gtzan', 'mirex2015', 'gni', 'samples2018', 'musan'])
+    dataset, x, all_labels, num_freqs, block_len = train_test_set(['1', '2', 'i', 's'], 0, config['Folders']['db_root'], config.getfloat('Network','block_length_sec'), ['samples'])
 
     # setup k-folds
     random.seed(a=42)
